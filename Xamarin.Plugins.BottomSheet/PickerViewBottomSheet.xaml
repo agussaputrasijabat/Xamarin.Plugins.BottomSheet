@@ -1,0 +1,70 @@
+﻿<?xml version="1.0" encoding="UTF-8" ?>
+<local:BaseBottomSheet
+    x:Class="Xamarin.Plugins.BottomSheet.PickerViewBottomSheet"
+    xmlns="http://xamarin.com/schemas/2014/forms"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:local="clr-namespace:Xamarin.Plugins.BottomSheet"
+    xmlns:yummy="clr-namespace:Xamarin.Forms.PancakeView;assembly=Xamarin.Forms.PancakeView"
+    Title="{Binding Config.Title}"
+    x:DataType="local:PickerViewBottomSheet">
+
+    <local:BaseBottomSheet.SheetContent>
+        <yummy:PancakeView
+            BackgroundColor="{Binding Config.BackgroundColor}"
+            CornerRadius="15,15,0,0"
+            VerticalOptions="FillAndExpand">
+            <StackLayout
+                BackgroundColor="{Binding Config.BackgroundColor}"
+                Spacing="10"
+                VerticalOptions="Fill">
+                <StackLayout Padding="10">
+                    <BoxView
+                        CornerRadius="2"
+                        HeightRequest="4"
+                        HorizontalOptions="CenterAndExpand"
+                        WidthRequest="40"
+                        Color="LightGray"
+                        Margin="0,0,0,15"/>
+
+                    <Label
+                        FontAttributes="Bold"
+                        FontSize="{Binding Config.TitleFontSize}"
+                        Text="{Binding Config.Title}"
+                        TextColor="{Binding Config.TitleColor}" />
+                </StackLayout>
+
+                <CollectionView
+                    x:Name="collectionView"
+                    BackgroundColor="{Binding Config.BackgroundColor}"
+                    HeightRequest="{Binding Config.HeightRequest}"
+                    ItemsSource="{Binding Config.ItemsSource}"
+                    Scrolled="CollectionView_Scrolled"
+                    SelectionChanged="CollectionView_SelectionChanged"
+                    SelectionMode="Single"
+                    VerticalOptions="Fill">
+                    <CollectionView.ItemTemplate>
+                        <DataTemplate>
+                            <Grid
+                                BackgroundColor="{Binding Config.BackgroundColor}"
+                                Padding="20,0,20,-0.5"
+                                x:DataType="local:PickerItem"
+                                RowDefinitions="50,1"
+                                RowSpacing="0">
+                                <Label
+                                    Grid.Row="0"
+                                    Text="{Binding ItemText}"
+                                    VerticalTextAlignment="Center"/>
+                                <BoxView
+                                    Grid.Row="1"
+                                    BackgroundColor="LightGray"
+                                    HeightRequest="0.5"
+                                    VerticalOptions="End"/>
+                            </Grid>
+                        </DataTemplate>
+                    </CollectionView.ItemTemplate>
+                </CollectionView>
+            </StackLayout>
+        </yummy:PancakeView>
+    </local:BaseBottomSheet.SheetContent>
+
+</local:BaseBottomSheet>
