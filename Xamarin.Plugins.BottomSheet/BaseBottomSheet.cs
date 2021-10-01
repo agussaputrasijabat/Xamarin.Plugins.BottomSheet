@@ -81,11 +81,10 @@ namespace Xamarin.Plugins.BottomSheet
 
         private static void OnDismissableContentChanged(object bindable, object oldValue, object newValue)
         {
-            Current.Init();
+            BaseBottomSheet popop = (BaseBottomSheet)bindable;
+            popop.Init();
             Console.WriteLine(newValue);
         }
-
-        public static BaseBottomSheet Current;
 
         public BaseBottomSheet()
         {
@@ -95,7 +94,6 @@ namespace Xamarin.Plugins.BottomSheet
             SystemPaddingSides = PaddingSide.All;
             HasSystemPadding = true;
             HasKeyboardOffset = false;
-            Current = this;
         }
 
         public void Init()
