@@ -1,5 +1,4 @@
-﻿using System;
-using System.ComponentModel;
+﻿using System.ComponentModel;
 using System.Runtime.CompilerServices;
 using Xamarin.Forms;
 
@@ -42,7 +41,7 @@ namespace Xamarin.Plugins.BottomSheet
 
         public object ItemKey
         {
-            get => _itemText;
+            get => _itemKey;
             set
             {
                 _itemKey = value;

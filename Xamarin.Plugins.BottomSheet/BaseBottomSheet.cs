@@ -1,11 +1,8 @@
-﻿using System;
-using System.ComponentModel;
-using System.Runtime.CompilerServices;
-using System.Threading.Tasks;
-using Rg.Plugins.Popup.Enums;
+﻿using Rg.Plugins.Popup.Enums;
 using Rg.Plugins.Popup.Extensions;
-using Xamarin.Forms;
+using System;
 using Xamarin.Essentials;
+using Xamarin.Forms;
 
 namespace Xamarin.Plugins.BottomSheet
 {

@@ -31,12 +31,18 @@ namespace Xamarin.Plugins.BottomSheet
         private static readonly BindableProperty TitleColorProperty = BindableProperty.Create(nameof(TitleColor),
             typeof(Color), typeof(BottomPicker), Color.Default);
 
+        private static readonly BindableProperty TitleFontFamilyProperty = BindableProperty.Create(nameof(TitleFontFamily),
+            typeof(string), typeof(BottomPicker), "Default");
+
         private static readonly BindableProperty TitleFontSizeProperty = BindableProperty.Create(nameof(TitleFontSize),
             typeof(double),
             typeof(BottomPicker), 16.0);
 
         private static readonly BindableProperty TitleImageProperty = BindableProperty.Create(nameof(TitleImageSource),
             typeof(string), typeof(BottomPicker), "");
+
+        private static readonly BindableProperty SeparatorColorProperty = BindableProperty.Create(nameof(SeparatorColor),
+           typeof(Color), typeof(BottomPicker), Color.LightGray);
 
         private static readonly BindableProperty TextColorProperty =
             BindableProperty.Create(nameof(TextColor), typeof(Color), typeof(BottomPicker), Color.Default);
@@ -93,6 +99,18 @@ namespace Xamarin.Plugins.BottomSheet
         {
             get => (Color)GetValue(TitleColorProperty);
             set => SetValue(TitleColorProperty, value);
+        }
+
+        public Color SeparatorColor
+        {
+            get => (Color)GetValue(SeparatorColorProperty);
+            set => SetValue(SeparatorColorProperty, value);
+        }
+
+        public string TitleFontFamily
+        {
+            get => (string)GetValue(TitleFontFamilyProperty);
+            set => SetValue(TitleFontFamilyProperty, value);
         }
 
         public double TitleFontSize
