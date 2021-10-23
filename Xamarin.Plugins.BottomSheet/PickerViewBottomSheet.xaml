@@ -29,6 +29,7 @@
 
                     <Label
                         FontAttributes="Bold"
+                        FontFamily="{Binding Config.TitleFontFamily}"
                         FontSize="{Binding Config.TitleFontSize}"
                         Text="{Binding Config.Title}"
                         TextColor="{Binding Config.TitleColor}" />
@@ -53,6 +54,9 @@
                                 RowSpacing="0">
                                 <Label
                                     Grid.Row="0"
+                                    FontAttributes="{Binding FontAttributes}"
+                                    FontFamily="{Binding FontFamily}"
+                                    FontSize="{Binding FontSize}"
                                     Text="{Binding ItemText}"
                                     VerticalTextAlignment="Center" />
                                 <BoxView
