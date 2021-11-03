@@ -5,6 +5,7 @@
     <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
     <RepositoryUrl>https://github.com/agussaputrasijabat/Xamarin.Plugins.BottomSheet</RepositoryUrl>
     <Authors>Agus Saputra Sijabat</Authors>
+	<LangVersion>8.0</LangVersion>
     <Version>1.0.1</Version>
   </PropertyGroup>
 
